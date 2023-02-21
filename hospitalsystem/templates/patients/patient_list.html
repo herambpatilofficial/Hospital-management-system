@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+
+{% comment %} <table class="table-auto border-separate border border-slate-400 ">
+
+<thead> <tr> 
+<th class="border border-slate-300 p-3"> First Name </th>
+<th class="border border-slate-300 p-3"> Last Name </th>
+<th class="border border-slate-300 p-3"> DOB </th>
+<th class="border border-slate-300 p-3"> Contact.No. </th>
+<th class="border border-slate-300 p-3"> Email </th>
+<th class="border border-slate-300 p-3"> address </th>
+<th class="border border-slate-300 p-3"> city </th>
+<th class="border border-slate-300 p-3"> med_history </th>
+<th class="border border-slate-300 p-3"> blood_type </th> 
+<th class="border border-slate-300 p-3"> assigned_ward </th>
+<th class="border border-slate-300 p-3"> assigned_bed   </th>
+
+</tr> </thead>
+
+<tbody>
+
+{% for patient in patients %}
+
+<tr>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.first_name }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.last_name }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.date_of_birth }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.phone_number }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.email }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.address }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.city }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.med_history }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.blood_type }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.assigned_ward }} </td>
+<td class="border border-slate-300 m-0.5 p-3"> {{ patient.assigned_bed }} </td>
+
+</tr>
+
+{% endfor %}
+</tbody>
+</table> {% endcomment %}
+
+
+
+
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+        <a class="mr-5 hover:text-gray-900"></a>
+        <a class="mr-5 hover:text-gray-900"></a>
+        <a class="mr-5 hover:text-gray-900"></a>
+        <a class="hover:text-gray-900"></a>
+      </nav>
+      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl"><strong>Turing TechLabs Hospitals</strong></span>
+      </a>
+      <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Tech Support
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+        <div class="sm:w-1/2 mb-10 px-4">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9ycyUyMGFuaW1hdGVkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Doctors</h2>
+          <p class="leading-relaxed text-base">Manage Doctors</p>
+         <a href="/admin/hospital/doctor/"> <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Manage</button>
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Staff</h2>
+          <p class="leading-relaxed text-base">Manage Nurses</p>
+          <a href="/admin/hospital/nurse/"> <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Manage</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+        <div class="sm:w-1/2 mb-10 px-4">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGF0aWVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Patients</h2>
+          <p class="leading-relaxed text-base">Manage Patients</p>
+          <a href="/admin/patients/patient/"> <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Manage</button>
+          </div>
+        <div class="sm:w-1/2 mb-10 px-4">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1512677859289-868722942457?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9jdG9ycyUyMGFuaW1hdGVkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Wards & Beds</h2>
+          <p class="leading-relaxed text-base">Manage Wards and beds</p>
+          <a href = "/admin/hospital/ward/"><button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Manage</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
